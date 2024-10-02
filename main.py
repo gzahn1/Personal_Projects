@@ -1,16 +1,26 @@
-# This is a sample Python script.
+from functions import *
 
-# Press ⌃F5 to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+def main():
+    dna_sequence_1 = input_sequence()
+    dna_sequence_2 = input_sequence()
+    print()
 
+    #get nucleotide freq for each sequence
+    print("DNA sequence 1 nucleotide frequency: " + str(nucleotide_freq(dna_sequence_1)))
+    print("DNA sequence 2 nucleotide frequency: " + str(nucleotide_freq(dna_sequence_2)))
+    print()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press F9 to toggle the breakpoint.
+    #get reverse complement for each sequence
+    print("The reverse complement of DNA sequence 1 is " + str(rev_complement(dna_sequence_1)))
+    print("The reverse complement of DNA sequence 2 is " + str(rev_complement(dna_sequence_2)))
+    print()
 
+    #get codons for each sequence
+    print("DNA sequence 1 codons: " + str(get_codons(dna_sequence_1)))
+    print("DNA sequence 2 codons: " + str(get_codons(dna_sequence_2)))
+    print()
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    sequence_codon_comparison(dna_sequence_1, dna_sequence_2) #compare
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    main()
